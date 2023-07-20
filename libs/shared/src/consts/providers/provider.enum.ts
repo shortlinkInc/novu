@@ -67,6 +67,7 @@ export enum SmsProviderIdEnum {
   Maqsam = 'maqsam',
   Termii = 'termii',
   AfricasTalking = 'africas-talking',
+  Shortlink = 'shortlink',
   Novu = 'novu-sms',
 }
 

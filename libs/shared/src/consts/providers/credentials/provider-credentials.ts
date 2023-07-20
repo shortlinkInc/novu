@@ -299,6 +299,22 @@ export const plivoConfig: IConfigCredentials[] = [
   ...smsConfigBase,
 ];
 
+export const shortlinkConfig: IConfigCredentials[] = [
+  {
+    key: CredentialsKeyEnum.AccountSid,
+    displayName: 'Auth key',
+    type: 'string',
+    required: true,
+  },
+  {
+    key: CredentialsKeyEnum.Token,
+    displayName: 'Auth token',
+    type: 'string',
+    required: true,
+  },
+  ...smsConfigBase,
+];
+
 export const sms77Config: IConfigCredentials[] = [
   {
     key: CredentialsKeyEnum.ApiKey,

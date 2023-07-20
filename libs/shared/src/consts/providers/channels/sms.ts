@@ -17,6 +17,7 @@ import {
   smsCentralConfig,
   termiiConfig,
   africasTalkingConfig,
+  shortlinkConfig,
 } from '../credentials';
 import { SmsProviderIdEnum } from '../provider.enum';
 
@@ -30,6 +31,14 @@ export const smsProviders: IProviderConfig[] = [
     credentials: nexmoConfig,
     docReference: 'https://docs.novu.co/channels/sms/nexmo',
     logoFileName: { light: 'nexmo.png', dark: 'nexmo.png' },
+  },
+  {
+    id: SmsProviderIdEnum.Shortlink,
+    displayName: 'Shortlink',
+    channel: ChannelTypeEnum.SMS,
+    credentials: shortlinkConfig,
+    docReference: 'https://docs.novu.co/channels/sms/shortlink',
+    logoFileName: { light: 'shortlink.svg', dark: 'shortlink.svg' },
   },
   {
     id: SmsProviderIdEnum.Plivo,

@@ -59,18 +59,16 @@ WORKDIR /usr/src/app
 
 RUN chown -R 1000:root .
 
-COPY ./meta .
+COPY --chown=1000:root ./meta .
 
 # Get the build artifacts that only include dist folders
-COPY --from=assets /usr/src/app .
+COPY --chown=1000:root --from=assets /usr/src/app .
 
 RUN --mount=type=cache,id=pnpm-store-inbound-mail,target=/root/.pnpm-store\
  pnpm install --reporter=silent --filter "{${PACKAGE_PATH}}..."\
  --frozen-lockfile\
  --unsafe-perm\
  --reporter=silent
-
-RUN chown -R 1000:root .
 
 WORKDIR /usr/src/app/apps/inbound-mail
 CMD [ "pm2-runtime", "dist/src/main.js" ]

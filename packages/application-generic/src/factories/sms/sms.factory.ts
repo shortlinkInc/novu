@@ -17,6 +17,7 @@ import {
   MaqsamHandler,
   SmsCentralHandler,
   AfricasTalkingSmsHandler,
+  ShortlinkSmsHandler,
 } from './handlers';
 
 export class SmsFactory implements ISmsFactory {
@@ -37,6 +38,7 @@ export class SmsFactory implements ISmsFactory {
     new MaqsamHandler(),
     new SmsCentralHandler(),
     new AfricasTalkingSmsHandler(),
+    new ShortlinkSmsHandler(),
   ];
 
   getHandler(integration: IntegrationEntity) {
